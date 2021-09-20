@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>student</managed-bean-name>
+        <managed-bean-class>paczka.Student</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/wprowadzanie.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>krok1</from-outcome>
+            <to-view-id>/zapis.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/zapis.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>krok2</from-outcome>
+            <to-view-id>/wyprowadzanie.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/wyprowadzanie.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>krok3</from-outcome>
+            <to-view-id>/wprowadzanie.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    	<application>
+		<resource-bundle>
+			<base-name>paczka.komunikaty</base-name>
+			<var>wiad</var>
+		</resource-bundle>
+	</application>
+</faces-config>
